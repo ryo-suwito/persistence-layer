@@ -1,0 +1,5 @@
+proto/*.proto
+proto/*.go
+schemas/*.json
+models/*.go
+services/*.go

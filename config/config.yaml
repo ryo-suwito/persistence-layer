@@ -1,0 +1,5 @@
+sql_dsn: "postgress://ryo:Monktoet@localhost:3306/?sslmode=disable"
+mysql_dsn: "ryo:Monktoet@tcp(localhost:3306)/mydb?charset=utf8mb4&parseTime=True&loc=Local"
+mongo_uri: "mongodb://localhost:27017"
+redis_uri: "redis://localhost:6379"
+es_uri: "http://localhost:9200"

@@ -1,0 +1,77 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Product",
+    "description": "A schema representing a product in an e-commerce application.",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "The unique identifier for a product.",
+        "minimum": 1
+      },
+      "name": {
+        "type": "string",
+        "description": "The name of the product.",
+        "minLength": 1,
+        "maxLength": 255
+      },
+      "short_description": {
+        "type": "string",
+        "description": "A brief description of the product.",
+        "minLength": 1,
+        "maxLength": 255
+      },
+      "description": {
+        "type": "string",
+        "description": "A detailed description of the product.",
+        "minLength": 1,
+        "maxLength": 2000
+      },
+      "price": {
+        "type": "number",
+        "description": "The price of the product.",
+        "minimum": 0.0
+      },
+      "currency": {
+        "type": "string",
+        "description": "The currency code for the product's price, e.g., USD, EUR.",
+        "minLength": 3,
+        "maxLength": 3,
+        "pattern": "^[A-Z]{3}$"
+      },
+      "stock": {
+        "type": "integer",
+        "description": "The number of units available in stock.",
+        "minimum": 0
+      },
+      "category": {
+        "type": "string",
+        "description": "The category of the product.",
+        "minLength": 1,
+        "maxLength": 255
+      },
+      "tags": {
+        "type": "array",
+        "description": "Tags for the product for easier search and categorization.",
+        "items": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "uniqueItems": true
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "description": "The timestamp when the product was created."
+      },
+      "updated_at": {
+        "type": "string",
+        "format": "date-time",
+        "description": "The timestamp when the product was last updated."
+      }
+    },
+    "required": ["name", "price", "currency", "stock", "category"],
+    "additionalProperties": false
+  }
+  
